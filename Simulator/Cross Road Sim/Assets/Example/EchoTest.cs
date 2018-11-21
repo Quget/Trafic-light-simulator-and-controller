@@ -8,7 +8,7 @@ public class EchoTest : MonoBehaviour
 	// Use this for initialization
 	IEnumerator Start ()
     {
-		WebSocket webSocket = new WebSocket(new Uri("ws://echo.websocket.org"));
+		WebSocket webSocket = new WebSocket(new Uri("ws://141.252.207.71:54000"));
 		yield return StartCoroutine(webSocket.Connect());
 		webSocket.SendString("Hi there");
 		int i=0;
