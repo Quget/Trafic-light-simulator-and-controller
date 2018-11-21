@@ -21,8 +21,8 @@ public class Communication : MonoBehaviour
     void Start ()
     {
         //webSocket = new WebSocket(new Uri(webSocketUrl));
-        Connect(webSocketUrl);
-        StartCoroutine(StartConnection());
+        //Connect(webSocketUrl);
+        //StartCoroutine(StartConnection());
 	}
 	
 	// Update is called once per frame
@@ -69,7 +69,7 @@ public class Communication : MonoBehaviour
     private void Received(string data)
     {
         Debug.Log("Received: " + data);
-
+        
         if(OnReceived != null)
         {
             OnReceived(data);

@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -42,6 +43,20 @@ public class Menu : MonoBehaviour
     private void Communication_OnReceived(string data)
     {
         debugText.text += data + "\n";
+
+        try
+        {
+            TraficLight[] light = JsonUtility.FromJson(data, typeof(TraficLight[])) as TraficLight[];
+            if (light != null)
+            {
+                Debug.Log(light.Length);
+            }
+        }
+        catch(Exception e)
+        {
+            Debug.Log(e.Message);
+        }
+        //Debug.Log(light.status + ":" + light.light + ":" + light.timer);
         //throw new System.NotImplementedException();
     }
 

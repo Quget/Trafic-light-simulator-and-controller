@@ -6,7 +6,7 @@ using System;
 [Serializable]
 public class TraficLight
 {
-    public string light;
     public string status;
-    public float timer;
+    public string light;
+    public float timer = 0;
 }
