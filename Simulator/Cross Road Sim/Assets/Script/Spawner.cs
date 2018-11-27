@@ -44,7 +44,9 @@ public class Spawner : MonoBehaviour
     void Start ()
     {
         timeToSpawn = Random.Range(timeToSpawnMin, timeToSpawnMax);
+#if UNITY_EDITOR
         gizmosColour = new Color(Random.Range(0.0f, 1), Random.Range(0.0f, 1), Random.Range(0.0f, 1), 1);//Color.green;
+#endif
     }
 	
 	// Update is called once per frame
