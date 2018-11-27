@@ -13,6 +13,9 @@ public class Menu : MonoBehaviour
 
     [SerializeField]
     private Text debugText;
+
+    [SerializeField]
+    private GameObject connectionMenu;
 	// Use this for initialization
 	void Start ()
     {
@@ -69,7 +72,10 @@ public class Menu : MonoBehaviour
     // Update is called once per frame
     void Update ()
     {
-		
+		if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            connectionMenu.SetActive(!connectionMenu.activeSelf);
+        }
 	}
 
     public void SendTest()
@@ -101,5 +107,10 @@ public class Menu : MonoBehaviour
     public void OnConnectClick()
     {
         communication.Connect(inputField.text);
+    }
+
+    public void OnQuitClick()
+    {
+        Application.Quit();
     }
 }

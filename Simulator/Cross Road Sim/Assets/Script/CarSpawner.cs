@@ -20,19 +20,40 @@ public class CarSpawner : MonoBehaviour
 
     [SerializeField]
     private Car carPrefab;
+
+    private float timeToSpawnMax = 10;
+    private float timeToSpawnMin = 1;
+    private float timeToSpawn;
+    private float spawnTimer;
+
+#if UNITY_EDITOR
+    [ExecuteInEditMode]
+    private Color gizmosColour = Color.green;//
+#endif
     // Use this for initialization
+    [ExecuteInEditMode]
     void Start ()
     {
-		
-	}
+        timeToSpawn = Random.Range(timeToSpawnMin, timeToSpawnMax);
+        gizmosColour = new Color(Random.Range(0.0f, 1), Random.Range(0.0f, 1), Random.Range(0.0f, 1), 1);//Color.green;
+    }
 	
 	// Update is called once per frame
 	void Update ()
     {
+        spawnTimer += Time.deltaTime;
+        if(spawnTimer >= timeToSpawn)
+        {
+            Spawn();
+            spawnTimer = 0;
+            timeToSpawn = Random.Range(timeToSpawnMin, timeToSpawnMax);
+        }
+        /*
         if(Input.GetKeyDown(KeyCode.Space))
         {
             Spawn();
         }
+        */
     }
     public void Spawn()
     {
@@ -41,7 +62,7 @@ public class CarSpawner : MonoBehaviour
     }
 
 
-
+#if UNITY_EDITOR
     /// <summary>
     /// Draw Gizmos in unity for visual feed back
     /// </summary>
@@ -50,7 +71,7 @@ public class CarSpawner : MonoBehaviour
         if (curveOne == null || curveTwo == null)
             return;
 
-        Gizmos.color = Color.green;
+        Gizmos.color = gizmosColour;//new Color(Random.Range(0.0f, 1), Random.Range(0.0f, 1), Random.Range(0.0f, 1), 1);//Color.green;
         //List<Vector3> points = new List<Vector3>();
         for (int i = 0; i < 100; i += 2)
         {
@@ -61,7 +82,7 @@ public class CarSpawner : MonoBehaviour
             Gizmos.DrawLine(curveOne, curveTwo);
         }
     }
-
+#endif
     //from the internet
     //https://en.wikipedia.org/wiki/B%C3%A9zier_curve
     //http://devmag.org.za/2011/04/05/bzier-curves-a-tutorial/
