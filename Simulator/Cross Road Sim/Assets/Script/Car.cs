@@ -12,6 +12,8 @@ public class Car : MonoBehaviour
 
     //private Vector3 startPos;
     CarSpawner carSpawner;
+
+    private bool stop = false;
     // Use this for initialization
     void Start ()
     {
@@ -23,14 +25,23 @@ public class Car : MonoBehaviour
     {
         if(carSpawner != null)
         {
-            bezierTimer += Time.deltaTime / timeToReachTarget;
-            if (bezierTimer > 1f)
-                bezierTimer = 1f;
+            if(!stop)
+            {
+                bezierTimer += Time.deltaTime / timeToReachTarget;
+                if (bezierTimer > 1f)
+                    bezierTimer = 1f;
+            }
+
 
             Vector3 bCurvePos = carSpawner.CalculateBezierPoint(bezierTimer, carSpawner.transform.position, carSpawner.curveOne.position, carSpawner.curveTwo.position, carSpawner.endTarget.position);
             Vector3 lookPos = bCurvePos;
             lookPos.y = transform.position.y;
             transform.position = bCurvePos;
+
+            if(Input.GetKeyDown(KeyCode.Q))
+            {
+                stop = !stop;
+            }
         }
 
     }

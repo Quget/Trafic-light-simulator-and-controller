@@ -46,10 +46,14 @@ public class Menu : MonoBehaviour
 
         try
         {
-            TraficLight[] light = JsonUtility.FromJson(data, typeof(TraficLight[])) as TraficLight[];
-            if (light != null)
+            TraficLight[] lights = JsonUtility.FromJson<TraficLight[]>(data);
+            if (lights != null)
             {
-                Debug.Log(light.Length);
+                if(lights.Length == 0)
+                {
+                    TraficLight light = JsonUtility.FromJson<TraficLight>(data);
+                }
+                Debug.Log(lights.Length);
             }
         }
         catch(Exception e)
@@ -70,6 +74,19 @@ public class Menu : MonoBehaviour
 
     public void SendTest()
     {
+
+        //[Serializable]
+        List<string> testList = new List<string>();
+        testList.Add("A1");
+        testList.Add("A2");
+
+        //string[] test = { "A1","A2","A3" };
+        string jsonString = JsonUtility.ToJson(testList);
+        Debug.Log(jsonString);
+        communication.Send(jsonString);
+        
+        
+        /*
         TraficLight traficLight = new TraficLight();
         traficLight.light = "A1";
         traficLight.status = "Green";
@@ -78,6 +95,7 @@ public class Menu : MonoBehaviour
         string jsonString = JsonUtility.ToJson(traficLight);
         Debug.Log(jsonString);
         communication.Send(jsonString);
+        */
     }
 
     public void OnConnectClick()
