@@ -38,6 +38,7 @@ public class TraficLightGameObject : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
     {
+        /*
 		if(Input.GetKeyDown(KeyCode.E))
         {
             if(traficLight.status == "green")
@@ -51,6 +52,7 @@ public class TraficLightGameObject : MonoBehaviour
 
             UpdateLight();
         }
+        */
 	}
 
     private void UpdateLight()
@@ -84,6 +86,7 @@ public class TraficLightGameObject : MonoBehaviour
                 break;
 
             default:
+                Debug.Log(traficLight.light);
                 spriteRenderer.color = Color.red;
                 if (collider2D != null)
                     collider2D.enabled = true;

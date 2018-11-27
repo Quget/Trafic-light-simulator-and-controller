@@ -46,7 +46,7 @@ public class Menu : MonoBehaviour
     private void Communication_OnReceived(string data)
     {
         debugText.text += data + "\n";
-
+        /*
         try
         {
             TraficLight[] lights = JsonUtility.FromJson<TraficLight[]>(data);
@@ -62,7 +62,7 @@ public class Menu : MonoBehaviour
         catch(Exception e)
         {
             Debug.Log(e.Message);
-        }
+        }*/
         //Debug.Log(light.status + ":" + light.light + ":" + light.timer);
         //throw new System.NotImplementedException();
     }
@@ -82,6 +82,7 @@ public class Menu : MonoBehaviour
     {
 
         //[Serializable]
+        /*
         List<string> testList = new List<string>();
         testList.Add("A1");
         testList.Add("A2");
@@ -92,7 +93,7 @@ public class Menu : MonoBehaviour
         communication.Send(jsonString);
         
         
-        /*
+        
         TraficLight traficLight = new TraficLight();
         traficLight.light = "A1";
         traficLight.status = "Green";

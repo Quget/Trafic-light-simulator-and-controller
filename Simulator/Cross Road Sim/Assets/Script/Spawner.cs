@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CarSpawner : MonoBehaviour
+public class Spawner : MonoBehaviour
 {
 
     [SerializeField]
@@ -19,12 +19,21 @@ public class CarSpawner : MonoBehaviour
 
 
     [SerializeField]
-    private Car carPrefab;
+    private MovingObject carPrefab;
 
+    [SerializeField]
     private float timeToSpawnMax = 10;
+
+    [SerializeField]
     private float timeToSpawnMin = 1;
+
+    [SerializeField]
+    private int maxSpawn = 10;
+
     private float timeToSpawn;
     private float spawnTimer;
+
+    private List<MovingObject> spawnedObjects = new List<MovingObject>();
 
 #if UNITY_EDITOR
     [ExecuteInEditMode]
@@ -44,7 +53,9 @@ public class CarSpawner : MonoBehaviour
         spawnTimer += Time.deltaTime;
         if(spawnTimer >= timeToSpawn)
         {
-            Spawn();
+            if(spawnedObjects.Count < maxSpawn)
+                Spawn();
+
             spawnTimer = 0;
             timeToSpawn = Random.Range(timeToSpawnMin, timeToSpawnMax);
         }
@@ -57,16 +68,24 @@ public class CarSpawner : MonoBehaviour
     }
     public void Spawn()
     {
-        Car car = Instantiate(carPrefab, transform);
-        car.Init(this);
+        MovingObject movingObject = Instantiate(carPrefab, transform);
+        movingObject.Init(this);
+        movingObject.OnRemoved += MovingObject_OnRemoved;
+        spawnedObjects.Add(movingObject);
     }
 
+    private void MovingObject_OnRemoved(MovingObject movingObject)
+    {
+        movingObject.OnRemoved -= MovingObject_OnRemoved;
+        spawnedObjects.Remove(movingObject);
+    }
 
 #if UNITY_EDITOR
     /// <summary>
     /// Draw Gizmos in unity for visual feed back
     /// </summary>
     void OnDrawGizmos()
+    //private void OnDrawGizmosSelected()
     {
         if (curveOne == null || curveTwo == null)
             return;

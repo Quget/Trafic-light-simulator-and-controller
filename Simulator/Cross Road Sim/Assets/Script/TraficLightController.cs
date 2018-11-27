@@ -17,6 +17,8 @@ public class TraficLightController : MonoBehaviour
 
     private void Communication_OnReceived(string data)
     {
+
+        data = "{\"Items\":" + data + "}";
         TraficLight[] traficLights = JsonHelper.FromJson<TraficLight>(data);
         if(traficLights != null && traficLights.Length > 0)
         {
