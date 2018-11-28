@@ -31,6 +31,7 @@ public class MovingObject : MonoBehaviour
     // Use this for initialization
     void Start ()
     {
+        /*
         TraficLightGameObject[] traficLightGameObjects = FindObjectsOfType<TraficLightGameObject>();
         for(int i = 0; i < traficLightGameObjects.Length;i++)
         {
@@ -48,7 +49,7 @@ public class MovingObject : MonoBehaviour
                     GetComponent<Collider2D>());
             }
         }
-
+        */
     }
 	
 	// Update is called once per frame
@@ -86,7 +87,8 @@ public class MovingObject : MonoBehaviour
                     }
                     else
                     {
-                        stop = true;
+                        if (raycastHit2D.collider.gameObject.name == gameObject.name)
+                            stop = true;
                     }
                 }
                 else
@@ -136,6 +138,15 @@ public class MovingObject : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+
+        TraficLightGameObject traficLightGameObject = collision.gameObject.GetComponent<TraficLightGameObject>();
+        if(traficLightGameObject != null)
+        {
+            Physics2D.IgnoreCollision(traficLightGameObject.GetComponent<Collider2D>(),
+                GetComponent<Collider2D>());
+            return;
+        }
+
         SpawnExplosion();
         //Debug.Log("Explosion");
         Destroy(this.gameObject);
