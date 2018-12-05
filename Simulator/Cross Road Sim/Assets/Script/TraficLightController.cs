@@ -6,6 +6,9 @@ public class TraficLightController : MonoBehaviour
 {
     private TraficLightGameObject[] traficLightGameObject;
     private Communication communication;
+
+    [SerializeField]
+    private Player player;
 	// Use this for initialization
 	void Start ()
     {
@@ -57,6 +60,13 @@ public class TraficLightController : MonoBehaviour
     // Update is called once per frame
     void Update ()
     {
-		
-	}
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            if(player != null)
+            {
+                player.gameObject.SetActive(!player.gameObject.activeSelf);
+            }
+        }
+
+    }
 }

@@ -39,6 +39,10 @@ public class Spawner : MonoBehaviour
     [ExecuteInEditMode]
     private Color gizmosColour = Color.green;//
 #endif
+
+    [SerializeField]
+    private TraficLightGameObject traficLightToSendOnSpawn = null;
+
     // Use this for initialization
     [ExecuteInEditMode]
     void Start ()
@@ -70,10 +74,24 @@ public class Spawner : MonoBehaviour
     }
     public void Spawn()
     {
-        MovingObject movingObject = Instantiate(carPrefab, transform);
-        movingObject.Init(this);
-        movingObject.OnRemoved += MovingObject_OnRemoved;
-        spawnedObjects.Add(movingObject);
+        RaycastHit2D raycastHit2D = Physics2D.CircleCast(transform.position, 0.55f, transform.up, 0.55f);
+        if(!raycastHit2D)
+        {
+            MovingObject movingObject = Instantiate(carPrefab, transform);
+            movingObject.Init(this);
+            movingObject.OnRemoved += MovingObject_OnRemoved;
+            spawnedObjects.Add(movingObject);
+
+            if (traficLightToSendOnSpawn != null)
+            {
+                string[] participation = { traficLightToSendOnSpawn.TraficLight.light };
+                string json = JsonHelper.ToJson<string>(participation);
+                json = json.Remove(0, 9);
+                json = json.Remove(json.Length - 1, 1);
+                FindObjectOfType<Communication>().Send(json);
+            }
+        }
+
     }
 
     private void MovingObject_OnRemoved(MovingObject movingObject)

@@ -28,30 +28,19 @@ public class MovingObject : MonoBehaviour
 
     [SerializeField]
     private string lightName = "A";
+
+    private List<TraficLightGameObject> traficLightToIgnore = new List<TraficLightGameObject>();
     // Use this for initialization
     void Start ()
     {
-        /*
-        TraficLightGameObject[] traficLightGameObjects = FindObjectsOfType<TraficLightGameObject>();
-        for(int i = 0; i < traficLightGameObjects.Length;i++)
-        {
-            bool isInName = false;
-            for (int j = 0; j < lightName.Length; j++)
-            {
-                if (lightName[j] == traficLightGameObjects[i].TraficLight.light[0])
-                {
-                    isInName = true;
-                }
-            }
-            //if(!isInName)
-            {
-                Physics2D.IgnoreCollision(traficLightGameObjects[i].GetComponent<Collider2D>(),
-                    GetComponent<Collider2D>());
-            }
-        }
-        */
+        GetComponent<Collider2D>().enabled = false;
+        Invoke("EnableColider", 0.5f);
     }
 	
+    private void EnableColider()
+    {
+        GetComponent<Collider2D>().enabled = true;
+    }
 	// Update is called once per frame
 	void Update ()
     {
@@ -73,13 +62,32 @@ public class MovingObject : MonoBehaviour
                             {
                                 if(!stop)
                                 {
-                                    stop = true;
-                                    string[] participation = { traficLightGameObject.TraficLight.light, traficLightGameObject.TraficLight.light };
-                                    string json = JsonHelper.ToJson<string>(participation);
-                                    json = json.Remove(0, 9);
-                                    json = json.Remove(json.Length-1, 1);
 
-                                    FindObjectOfType<Communication>().Send(json);
+                                    bool isIgnored = false;
+                                    for(int t = 0; t < traficLightToIgnore.Count; t++)
+                                    {
+                                        if(traficLightGameObject == traficLightToIgnore[i])
+                                        {
+                                            isIgnored = true;
+                                            break;
+                                        }
+                                    }
+
+                                    if(!isIgnored)
+                                    {
+                                        stop = true;
+                                        string[] participation = { traficLightGameObject.TraficLight.light};
+                                        string json = JsonHelper.ToJson<string>(participation);
+                                        json = json.Remove(0, 9);
+                                        json = json.Remove(json.Length - 1, 1);
+
+                                        FindObjectOfType<Communication>().Send(json);
+
+                                        traficLightToIgnore.Add(traficLightGameObject);
+                                        Physics2D.IgnoreCollision(traficLightGameObject.GetComponent<Collider2D>(),
+                                            GetComponent<Collider2D>());
+
+                                    }
                                 }
                                 break;
                             }
@@ -138,7 +146,6 @@ public class MovingObject : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-
         TraficLightGameObject traficLightGameObject = collision.gameObject.GetComponent<TraficLightGameObject>();
         if(traficLightGameObject != null)
         {

@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class AnimateDestroy : MonoBehaviour {
 
+    [SerializeField]
+    private AudioClip explosionSound;
 	// Use this for initialization
 	void Start ()
     {
-		
+        AudioSource.PlayClipAtPoint(explosionSound, transform.position);
 	}
 	
 	// Update is called once per frame
