@@ -29,6 +29,7 @@ public class Menu : MonoBehaviour
     {
         communication.OnReceived += Communication_OnReceived;
         communication.OnError += Communication_OnError;
+        Time.timeScale = 0;
     }
 
     private void OnDisable()
@@ -74,6 +75,15 @@ public class Menu : MonoBehaviour
     {
 		if(Input.GetKeyDown(KeyCode.Escape))
         {
+            if(!connectionMenu.activeSelf)
+            {
+                Time.timeScale = 0.1f;
+            }
+            else
+            {
+                Time.timeScale = 1;
+                Debug.Log("yo");
+            }
             connectionMenu.SetActive(!connectionMenu.activeSelf);
         }
 	}

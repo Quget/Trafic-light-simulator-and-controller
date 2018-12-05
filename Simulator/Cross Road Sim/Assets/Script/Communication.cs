@@ -37,9 +37,9 @@ public class Communication : MonoBehaviour
             traficLights.Add(TestLight("A2", "green"));
             traficLights.Add(TestLight("A3", "green"));
 
-            traficLights.Add(TestLight("C3.1", "red"));
-            traficLights.Add(TestLight("C3.2", "red"));
-            traficLights.Add(TestLight("B3", "red"));
+            traficLights.Add(TestLight("A8", "red"));
+            traficLights.Add(TestLight("A9", "red"));
+            traficLights.Add(TestLight("A10", "red"));
 
             string json = JsonHelper.ToJson(traficLights.ToArray());
             json = json.Remove(0, 9);
@@ -56,9 +56,9 @@ public class Communication : MonoBehaviour
             traficLights.Add(TestLight("A2", "red"));
             traficLights.Add(TestLight("A3", "red"));
 
-            traficLights.Add(TestLight("C3.1", "green"));
-            traficLights.Add(TestLight("C3.2", "green"));
-            traficLights.Add(TestLight("B3", "green"));
+            traficLights.Add(TestLight("A8", "green"));
+            traficLights.Add(TestLight("A9", "green"));
+            traficLights.Add(TestLight("A10", "green"));
 
             string json = JsonHelper.ToJson(traficLights.ToArray());
             json = json.Remove(0, 9);
@@ -72,7 +72,7 @@ public class Communication : MonoBehaviour
             List<TraficLight> traficLights = new List<TraficLight>();
 
             TraficLight traficLight = new TraficLight();
-            traficLights.Add(TestLight("E1", "red"));
+            traficLights.Add(TestLight("F1", "red"));
 
             string json = JsonHelper.ToJson(traficLights.ToArray());
             json = json.Remove(0, 9);
@@ -80,12 +80,13 @@ public class Communication : MonoBehaviour
 
             TestReceive(json);
         }
+
         if (Input.GetKeyDown(KeyCode.T))
         {
             List<TraficLight> traficLights = new List<TraficLight>();
 
             TraficLight traficLight = new TraficLight();
-            traficLights.Add(TestLight("E1", "green"));
+            traficLights.Add(TestLight("F1", "green"));
 
             string json = JsonHelper.ToJson(traficLights.ToArray());
             json = json.Remove(0, 9);

@@ -33,8 +33,14 @@ public class MovingObject : MonoBehaviour
     // Use this for initialization
     void Start ()
     {
-        GetComponent<Collider2D>().enabled = false;
-        Invoke("EnableColider", 0.5f);
+        TraficLightGameObject[] traficLightGameObjects = FindObjectOfType<TraficLightController>().TraficLightGameObjects;
+        for (int i = 0; i < traficLightGameObjects.Length; i++)
+        {
+            Physics2D.IgnoreCollision(traficLightGameObjects[i].GetComponent<Collider2D>(), GetComponent<Collider2D>());
+        }
+
+        //GetComponent<Collider2D>().enabled = false;
+        //Invoke("EnableColider", 0.25f);
     }
 	
     private void EnableColider()
@@ -50,7 +56,7 @@ public class MovingObject : MonoBehaviour
             {
                 GetComponent<Collider2D>().enabled = false;
                 //RaycastHit2D raycastHit2D = Physics2D.Raycast(transform.position, transform.right, 1);
-                RaycastHit2D raycastHit2D = Physics2D.CircleCast(transform.position, 0.15f, transform.right, 0.5f);
+                RaycastHit2D raycastHit2D = Physics2D.CircleCast(transform.position /*+ (transform.right * 0.15f)*/, 0.15f, transform.right, 0.5f);
                 if (raycastHit2D)
                 {
                     TraficLightGameObject traficLightGameObject = raycastHit2D.collider.GetComponent<TraficLightGameObject>();
@@ -66,6 +72,11 @@ public class MovingObject : MonoBehaviour
                                     bool isIgnored = false;
                                     for(int t = 0; t < traficLightToIgnore.Count; t++)
                                     {
+                                        if(i >= traficLightToIgnore.Count)
+                                        {
+                                            return;
+                                        }
+
                                         if(traficLightGameObject == traficLightToIgnore[i])
                                         {
                                             isIgnored = true;
@@ -91,10 +102,16 @@ public class MovingObject : MonoBehaviour
                                 }
                                 break;
                             }
+                            else
+                            {
+                                Debug.Log("STAPH");
+                                //stop = false;
+                            }
                         }
                     }
                     else
                     {
+                        //Debug.Log(gameObject.name);
                         if (raycastHit2D.collider.gameObject.name == gameObject.name)
                             stop = true;
                     }
@@ -118,7 +135,14 @@ public class MovingObject : MonoBehaviour
             }
 
             Vector3 bCurvePos = carSpawner.CalculateBezierPoint(bezierTimer, carSpawner.transform.position, carSpawner.curveOne.position, carSpawner.curveTwo.position, carSpawner.endTarget.position);
-            Vector3 lookPos = bCurvePos;
+
+            /*
+            Vector3 lookbCruve = carSpawner.CalculateBezierPoint(bezierTimer + 0.2f , 
+                carSpawner.transform.position, 
+                carSpawner.curveOne.position, carSpawner.curveTwo.position, 
+                carSpawner.endTarget.position);
+                */
+            //Vector3 lookPos = bCurvePos;
             transform.right = bCurvePos - transform.position;
             //lookPos.x= transform.position.x;
             //transform.LookAt(Vector3.forward, Vector3.Cross(Vector3.forward, bCurvePos));

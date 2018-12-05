@@ -20,6 +20,9 @@ public class TraficLightGameObject : MonoBehaviour
     }
     private SpriteRenderer spriteRenderer;
     private new Collider2D collider2D;
+
+    [SerializeField]
+    private string dependsOn = "";
     /*
     private string lightName = "NULL";
     public string LightName { get { return lightName; } }
@@ -38,22 +41,40 @@ public class TraficLightGameObject : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
     {
-        /*
-		if(Input.GetKeyDown(KeyCode.E))
-        {
-            if(traficLight.status == "green")
-            {
-                traficLight.status = "red";
-            }
-            else
-            {
-                traficLight.status = "green";
-            }
+        Special();
+    }
 
-            UpdateLight();
+    private void Special()
+    {
+        if(string.IsNullOrEmpty(dependsOn))
+        {
+            return;
         }
-        */
-	}
+
+        bool doBlock = false;
+        TraficLightController traficLightController = FindObjectOfType<TraficLightController>();
+        for (int i = 0; i < traficLightController.TraficLightGameObjects.Length; i++)
+        {
+            if (traficLightController.TraficLightGameObjects[i].traficLight.light[0] == dependsOn[0])
+            {
+                if (traficLightController.TraficLightGameObjects[i].traficLight.status == "green")
+                {
+                    doBlock = true;
+                    break;
+                }
+            }
+        }
+
+        if (doBlock)
+        {
+            traficLight.status = "red";
+        }
+        else
+        {
+            traficLight.status = "green";
+        }
+        UpdateLight();
+    }
 
     private void UpdateLight()
     {

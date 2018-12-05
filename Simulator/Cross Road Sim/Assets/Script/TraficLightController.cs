@@ -1,18 +1,20 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class TraficLightController : MonoBehaviour
 {
-    private TraficLightGameObject[] traficLightGameObject;
-    private Communication communication;
+    private TraficLightGameObject[] traficLightGameObjects;
 
+    public TraficLightGameObject[] TraficLightGameObjects { get { return traficLightGameObjects; } }
+    private Communication communication;
     [SerializeField]
     private Player player;
 	// Use this for initialization
 	void Start ()
     {
-        traficLightGameObject = FindObjectsOfType<TraficLightGameObject>();
+        traficLightGameObjects = FindObjectsOfType<TraficLightGameObject>();
         communication = FindObjectOfType<Communication>();
 
         communication.OnReceived += Communication_OnReceived;
@@ -20,38 +22,44 @@ public class TraficLightController : MonoBehaviour
 
     private void Communication_OnReceived(string data)
     {
-
-        data = "{\"Items\":" + data + "}";
-        TraficLight[] traficLights = JsonHelper.FromJson<TraficLight>(data);
-        if(traficLights != null && traficLights.Length > 0)
+        try
         {
-            for(int i =0; i < traficLights.Length; i++)
+            data = "{\"Items\":" + data + "}";
+            TraficLight[] traficLights = JsonHelper.FromJson<TraficLight>(data);
+            if (traficLights != null && traficLights.Length > 0)
             {
-                List<TraficLightGameObject> traficLightGameObjects = FindTheLight(traficLights[i].light);
-                if(traficLightGameObjects.Count == 0)
+                for (int i = 0; i < traficLights.Length; i++)
                 {
-                    Debug.Log("ADD THIS LIGHT!" + traficLights[i].light);
-                }
-                else
-                {
-                    for (int j = 0; j < traficLightGameObjects.Count; j++)
+                    List<TraficLightGameObject> traficLightGameObjects = FindTheLight(traficLights[i].light);
+                    if (traficLightGameObjects.Count == 0)
                     {
-                        traficLightGameObjects[j].TraficLight = traficLights[i];
+                        Debug.Log("ADD THIS LIGHT!" + traficLights[i].light);
+                    }
+                    else
+                    {
+                        for (int j = 0; j < traficLightGameObjects.Count; j++)
+                        {
+                            traficLightGameObjects[j].TraficLight = traficLights[i];
+                        }
                     }
                 }
-            }
 
+            }
+        }
+        catch(Exception e)
+        {
+            Debug.Log(e.Message);
         }
     }
 
     private List<TraficLightGameObject> FindTheLight(string lightName)
     {
         List<TraficLightGameObject> traficLights = new List<TraficLightGameObject>();
-        for (int i = 0; i < traficLightGameObject.Length; i++)
+        for (int i = 0; i < traficLightGameObjects.Length; i++)
         {
-            if(traficLightGameObject[i].TraficLight.light == lightName)
+            if(traficLightGameObjects[i].TraficLight.light == lightName)
             {
-                traficLights.Add(traficLightGameObject[i]);
+                traficLights.Add(traficLightGameObjects[i]);
             }
         }
         return traficLights;
