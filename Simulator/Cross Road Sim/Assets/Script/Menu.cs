@@ -82,7 +82,7 @@ public class Menu : MonoBehaviour
             else
             {
                 Time.timeScale = 1;
-                Debug.Log("yo");
+                //Debug.Log("yo");
             }
             connectionMenu.SetActive(!connectionMenu.activeSelf);
         }

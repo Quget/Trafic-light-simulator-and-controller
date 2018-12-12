@@ -17,6 +17,12 @@ public class Communication : MonoBehaviour
     private string webSocketUrl = "ws://141.252.207.71:54000";
 
     private WebSocket webSocket;
+
+    [SerializeField]
+    private bool testMode = false;
+
+    private bool isRunning = false;
+    private Queue<Action> testActions = new Queue<Action>();
     // Use this for initialization
     void Start ()
     {
@@ -28,6 +34,11 @@ public class Communication : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
     {
+        if(Input.GetKeyDown(KeyCode.E))
+        {
+            testMode = !testMode;
+        }
+        /*
 		if(Input.GetKeyDown(KeyCode.E))
         {
             List<TraficLight> traficLights = new List<TraficLight>();
@@ -132,6 +143,7 @@ public class Communication : MonoBehaviour
 
             TestReceive(json);
         }
+        */
     }
     private TraficLight TestLight(string name, string status, float timer = 0)
     {
@@ -200,9 +212,53 @@ public class Communication : MonoBehaviour
             {
                 OnError("Cannot send, websocket is null");
             }
-            Debug.Log("Sending" + data);
+
+            if(testMode)
+            {
+                testActions.Enqueue(() =>
+                {
+                    StartCoroutine(TestLight(data));
+                });
+                //StartCoroutine(TestLight(data));
+                if(testActions.Count == 1 && !isRunning)
+                {
+                    testActions.Dequeue().Invoke();
+                }
+            }
+
             return;
         }
+        Debug.Log("Sending" + data);
         webSocket.SendString(data);
+    }
+
+    private IEnumerator TestLight(string data)
+    {
+        isRunning = true;
+        data = data.Remove(0, 2);
+        data = data.Remove(data.Length - 2, 2);
+        List<TraficLight> traficLights = new List<TraficLight>();
+        TraficLightGameObject[] traficLightGameObjects = FindObjectsOfType<TraficLightGameObject>();
+        for (int i = 0; i < traficLightGameObjects.Length; i++)
+        {
+            if (traficLightGameObjects[i].TraficLight.light == data)
+            {
+                traficLightGameObjects[i].TraficLight.status = "green";
+            }
+            else
+            {
+                traficLightGameObjects[i].TraficLight.status = "red";
+            }
+            traficLights.Add(traficLightGameObjects[i].TraficLight);
+        }
+        string json = JsonHelper.ToJson(traficLights.ToArray());
+        json = json.Remove(0, 9);
+        json = json.Remove(json.Length - 1, 1);
+        TestReceive(json);
+        yield return new WaitForSeconds(UnityEngine.Random.Range(2f, 5));
+        isRunning = false;
+        if (testActions.Count != 0)
+            testActions.Dequeue().Invoke();
+
     }
 }

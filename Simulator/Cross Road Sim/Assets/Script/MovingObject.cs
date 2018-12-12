@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class MovingObject : MonoBehaviour
 {
-
-
     public delegate void OnRemovedEvent(MovingObject movingObject);
     public event OnRemovedEvent OnRemoved;
 
@@ -17,6 +15,7 @@ public class MovingObject : MonoBehaviour
     //private Vector3 startPos;
     Spawner carSpawner;
 
+    [SerializeField]
     private bool stop = false;
 
     [SerializeField]
@@ -30,17 +29,34 @@ public class MovingObject : MonoBehaviour
     private string lightName = "A";
 
     private List<TraficLightGameObject> traficLightToIgnore = new List<TraficLightGameObject>();
+
+    [SerializeField]
+    private bool randomColour = true;
+
     // Use this for initialization
     void Start ()
     {
         TraficLightGameObject[] traficLightGameObjects = FindObjectOfType<TraficLightController>().TraficLightGameObjects;
-        for (int i = 0; i < traficLightGameObjects.Length; i++)
+        if(traficLightGameObjects != null)
         {
-            Physics2D.IgnoreCollision(traficLightGameObjects[i].GetComponent<Collider2D>(), GetComponent<Collider2D>());
+            for (int i = 0; i < traficLightGameObjects.Length; i++)
+            {
+                Physics2D.IgnoreCollision(traficLightGameObjects[i].GetComponent<Collider2D>(), GetComponent<Collider2D>());
+            }
         }
 
-        //GetComponent<Collider2D>().enabled = false;
-        //Invoke("EnableColider", 0.25f);
+        if(randomColour)
+        {
+            GetComponent<SpriteRenderer>().color = new Color(Random.Range(0.0f, 1f),
+                Random.Range(0.0f, 1f),
+                Random.Range(0.0f, 1f));
+        }
+
+        GetComponent<Collider2D>().enabled = false;
+        Vector3 bCurvePos = carSpawner.CalculateBezierPoint(bezierTimer, carSpawner.transform.position, carSpawner.curveOne.position, carSpawner.curveTwo.position, carSpawner.endTarget.position);
+        transform.right = bCurvePos - transform.position;
+        GetComponent<Collider2D>().enabled = true;
+        //Invoke("EnableColider", 0.10f);
     }
 	
     private void EnableColider()
@@ -54,9 +70,12 @@ public class MovingObject : MonoBehaviour
         {
             if (!ignoreCollision)
             {
-                GetComponent<Collider2D>().enabled = false;
+                Vector3 colSize = GetComponent<Collider2D>().bounds.size;
+                //GetComponent<Collider2D>().enabled = false;
                 //RaycastHit2D raycastHit2D = Physics2D.Raycast(transform.position, transform.right, 1);
-                RaycastHit2D raycastHit2D = Physics2D.CircleCast(transform.position /*+ (transform.right * 0.15f)*/, 0.15f, transform.right, 0.6f);
+                //Debug.Log(GetComponent<Collider2D>().bounds.size);
+                //Debug.Log(colSize);
+                RaycastHit2D raycastHit2D = Physics2D.CircleCast(transform.position /*+ (transform.right * 0.15f)*/, 0.15f, transform.right, colSize.x * 1.1f);
                 if (raycastHit2D)
                 {
                     TraficLightGameObject traficLightGameObject = raycastHit2D.collider.GetComponent<TraficLightGameObject>();
@@ -87,12 +106,15 @@ public class MovingObject : MonoBehaviour
                                     if(!isIgnored)
                                     {
                                         stop = true;
-                                        string[] participation = { traficLightGameObject.TraficLight.light};
-                                        string json = JsonHelper.ToJson<string>(participation);
-                                        json = json.Remove(0, 9);
-                                        json = json.Remove(json.Length - 1, 1);
+                                        if (traficLightGameObject.TraficLight.light != "E1")
+                                        {
+                                            string[] participation = { traficLightGameObject.TraficLight.light };
+                                            string json = JsonHelper.ToJson<string>(participation);
+                                            json = json.Remove(0, 9);
+                                            json = json.Remove(json.Length - 1, 1);
 
-                                        FindObjectOfType<Communication>().Send(json);
+                                            FindObjectOfType<Communication>().Send(json);
+                                        }
 
                                         traficLightToIgnore.Add(traficLightGameObject);
                                         Physics2D.IgnoreCollision(traficLightGameObject.GetComponent<Collider2D>(),
@@ -105,7 +127,7 @@ public class MovingObject : MonoBehaviour
                             else
                             {
                                 //Debug.Log("STAPH");
-                                //stop = false;
+                                stop = false;
                             }
                         }
                     }
@@ -120,7 +142,7 @@ public class MovingObject : MonoBehaviour
                 {
                     stop = false;
                 }
-                GetComponent<Collider2D>().enabled = true;
+                //GetComponent<Collider2D>().enabled = true;
             }
 
             if (!stop)

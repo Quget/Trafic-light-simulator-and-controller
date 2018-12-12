@@ -19,7 +19,8 @@ public class Spawner : MonoBehaviour
 
 
     [SerializeField]
-    private MovingObject carPrefab;
+    //private MovingObject carPrefab;
+    private MovingObject[] movingObjectPrefabs;
 
     [SerializeField]
     private float timeToSpawnMax = 10;
@@ -77,7 +78,7 @@ public class Spawner : MonoBehaviour
         RaycastHit2D raycastHit2D = Physics2D.CircleCast(transform.position, 0.55f, transform.up, 0.55f);
         if(!raycastHit2D)
         {
-            MovingObject movingObject = Instantiate(carPrefab, transform);
+            MovingObject movingObject = Instantiate(movingObjectPrefabs[Random.Range(0, movingObjectPrefabs.Length)], transform);
             movingObject.Init(this);
             movingObject.OnRemoved += MovingObject_OnRemoved;
             spawnedObjects.Add(movingObject);

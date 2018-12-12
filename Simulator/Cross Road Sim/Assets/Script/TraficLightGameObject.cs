@@ -98,7 +98,7 @@ public class TraficLightGameObject : MonoBehaviour
             case "orange":
                 spriteRenderer.color = new Color32(253,106,2,255);
                 if (collider2D != null)
-                    collider2D.enabled = true;
+                    collider2D.enabled = false;
                 break;
             case "green":
                 spriteRenderer.color = Color.green;
