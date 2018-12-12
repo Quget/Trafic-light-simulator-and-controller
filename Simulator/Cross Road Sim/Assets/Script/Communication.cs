@@ -67,6 +67,44 @@ public class Communication : MonoBehaviour
             TestReceive(json);
         }
 
+        if (Input.GetKeyDown(KeyCode.Z))
+        {
+            List<TraficLight> traficLights = new List<TraficLight>();
+
+            TraficLight traficLight = new TraficLight();
+            traficLights.Add(TestLight("D1", "green"));
+            traficLights.Add(TestLight("A5", "green"));
+            traficLights.Add(TestLight("A4", "green"));
+
+            traficLights.Add(TestLight("A6", "red"));
+            traficLights.Add(TestLight("A7", "red"));
+
+            string json = JsonHelper.ToJson(traficLights.ToArray());
+            json = json.Remove(0, 9);
+            json = json.Remove(json.Length - 1, 1);
+
+            TestReceive(json);
+        }
+
+        if (Input.GetKeyDown(KeyCode.X))
+        {
+            List<TraficLight> traficLights = new List<TraficLight>();
+
+            TraficLight traficLight = new TraficLight();
+            traficLights.Add(TestLight("D1", "red"));
+            traficLights.Add(TestLight("A5", "red"));
+            traficLights.Add(TestLight("A4", "red"));
+
+            traficLights.Add(TestLight("A6", "green"));
+            traficLights.Add(TestLight("A7", "green"));
+
+            string json = JsonHelper.ToJson(traficLights.ToArray());
+            json = json.Remove(0, 9);
+            json = json.Remove(json.Length - 1, 1);
+
+            TestReceive(json);
+        }
+
         if (Input.GetKeyDown(KeyCode.R))
         {
             List<TraficLight> traficLights = new List<TraficLight>();

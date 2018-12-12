@@ -15,11 +15,34 @@ public class Player : MonoBehaviour
 
     [SerializeField]
     private AudioClip bulletSound;
+
+    [SerializeField]
+    private AudioSource shootSource;
+
+    [SerializeField]
+    private AudioClip kra;
+
+    [SerializeField]
+    private AudioClip ka;
+
+    [SerializeField]
+    private AudioClip kah;
+
+    private bool first = true;
+
+    [SerializeField]
+    private bool destroyMode = true;
+
+    [SerializeField]
+    private float delayTimerNonDestroy = 1f;
+
+    public bool DestroyMode { get { return destroyMode; } }
 	// Use this for initialization
 	void Start ()
     {
-		
-	}
+        shootSource.clip = kra;
+
+    }
 	
 	// Update is called once per frame
 	void Update ()
@@ -37,14 +60,27 @@ public class Player : MonoBehaviour
             goToPos.z = 0;
 
             transform.position = goToPos;
+        }
 
-            //transform.Translate(transform.right * (5 * Time.deltaTime));
+        if(Input.GetKeyDown(KeyCode.L))
+        {
+            destroyMode = !destroyMode;
+        }
+
+        if(Input.GetMouseButtonDown(0))
+        {
+            timer = delayTimer;
+            if(!destroyMode)
+            {
+                timer = delayTimerNonDestroy;
+            }
         }
 
         if(Input.GetMouseButton(0))
         {
             timer += Time.deltaTime;
-            if (timer > delayTimer)
+            if ((destroyMode && timer > delayTimer) ||
+                (!destroyMode && timer > delayTimerNonDestroy))
             {
                 Bullet bullet = Instantiate(bulletPrefab, null);
 
@@ -60,10 +96,31 @@ public class Player : MonoBehaviour
                 timer = 0;
                 if(bulletSound != null)
                 {
-                    AudioSource.PlayClipAtPoint(bulletSound, transform.position);
+                    //AudioSource.PlayClipAtPoint(bulletSound, transform.position);
+                    if(shootSource != null && !shootSource.isPlaying)
+                    {
+                        if(!first)
+                        {
+                            shootSource.clip = ka;
+                        }
+                        else
+                        {
+                            shootSource.clip = kra;
+                        }
+                        shootSource.Play();
+                        first = false;
+                    }
                 }
             }
-            //bullet
+            return;
         }
+        if (!first && shootSource != null && !shootSource.isPlaying)
+        {
+            Debug.Log("yo");
+            shootSource.clip = kah;
+            shootSource.Play();
+            first = true;
+        }
+
     }
 }

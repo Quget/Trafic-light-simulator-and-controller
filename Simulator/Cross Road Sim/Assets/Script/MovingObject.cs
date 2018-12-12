@@ -56,7 +56,7 @@ public class MovingObject : MonoBehaviour
             {
                 GetComponent<Collider2D>().enabled = false;
                 //RaycastHit2D raycastHit2D = Physics2D.Raycast(transform.position, transform.right, 1);
-                RaycastHit2D raycastHit2D = Physics2D.CircleCast(transform.position /*+ (transform.right * 0.15f)*/, 0.15f, transform.right, 0.5f);
+                RaycastHit2D raycastHit2D = Physics2D.CircleCast(transform.position /*+ (transform.right * 0.15f)*/, 0.15f, transform.right, 0.6f);
                 if (raycastHit2D)
                 {
                     TraficLightGameObject traficLightGameObject = raycastHit2D.collider.GetComponent<TraficLightGameObject>();
@@ -104,7 +104,7 @@ public class MovingObject : MonoBehaviour
                             }
                             else
                             {
-                                Debug.Log("STAPH");
+                                //Debug.Log("STAPH");
                                 //stop = false;
                             }
                         }
@@ -175,6 +175,7 @@ public class MovingObject : MonoBehaviour
         {
             Physics2D.IgnoreCollision(traficLightGameObject.GetComponent<Collider2D>(),
                 GetComponent<Collider2D>());
+            stop = false;
             return;
         }
 

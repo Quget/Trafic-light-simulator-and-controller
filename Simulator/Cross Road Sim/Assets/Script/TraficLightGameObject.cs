@@ -76,7 +76,7 @@ public class TraficLightGameObject : MonoBehaviour
         UpdateLight();
     }
 
-    private void UpdateLight()
+    public void UpdateLight()
     {
         if(spriteRenderer == null)
         {
