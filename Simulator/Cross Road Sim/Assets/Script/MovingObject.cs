@@ -201,7 +201,8 @@ public class MovingObject : MonoBehaviour
             return;
         }
 
-        SpawnExplosion();
+        if(GetComponent<SpriteRenderer>().isVisible)
+            SpawnExplosion();
         //Debug.Log("Explosion");
         Destroy(this.gameObject);
     }

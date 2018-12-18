@@ -21,6 +21,11 @@ public class Communication : MonoBehaviour
     [SerializeField]
     private bool testMode = false;
 
+    [SerializeField]
+    private float spawnMultiplier = 1;
+
+    public float SpawnMultiplier { get { return spawnMultiplier; } }
+
     private bool isRunning = false;
     private Queue<Action> testActions = new Queue<Action>();
     // Use this for initialization

@@ -44,6 +44,7 @@ public class Spawner : MonoBehaviour
     [SerializeField]
     private TraficLightGameObject traficLightToSendOnSpawn = null;
 
+    private Communication communication;
     // Use this for initialization
     [ExecuteInEditMode]
     void Start ()
@@ -52,15 +53,17 @@ public class Spawner : MonoBehaviour
 #if UNITY_EDITOR
         gizmosColour = new Color(Random.Range(0.0f, 1), Random.Range(0.0f, 1), Random.Range(0.0f, 1), 1);//Color.green;
 #endif
+        communication = FindObjectOfType<Communication>();
+        //spawnTimer *= spawnMultiplier;
     }
 	
 	// Update is called once per frame
 	void Update ()
     {
         spawnTimer += Time.deltaTime;
-        if(spawnTimer >= timeToSpawn)
+        if((spawnTimer) >= timeToSpawn)
         {
-            if(spawnedObjects.Count < maxSpawn)
+            if(spawnedObjects.Count < maxSpawn * communication.SpawnMultiplier)
                 Spawn();
 
             spawnTimer = 0;
