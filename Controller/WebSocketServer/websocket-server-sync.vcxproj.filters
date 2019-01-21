@@ -1,0 +1,595 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="TrafficLightStateMachine.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="boost\beast\core.hpp">
+      <Filter>beast</Filter>
+    </ClInclude>
+    <ClInclude Include="boost\beast\core\bind_handler.hpp">
+      <Filter>beast\core</Filter>
+    </ClInclude>
+    <ClInclude Include="boost\beast\core\buffered_read_stream.hpp">
+      <Filter>beast\core</Filter>
+    </ClInclude>
+    <ClInclude Include="boost\beast\core\buffers_adapter.hpp">
+      <Filter>beast\core</Filter>
+    </ClInclude>
+    <ClInclude Include="boost\beast\core\buffers_cat.hpp">
+      <Filter>beast\core</Filter>
+    </ClInclude>
+    <ClInclude Include="boost\beast\core\buffers_prefix.hpp">
+      <Filter>beast\core</Filter>
+    </ClInclude>
+    <ClInclude Include="boost\beast\core\buffers_suffix.hpp">
+      <Filter>beast\core</Filter>
+    </ClInclude>
+    <ClInclude Include="boost\beast\core\buffers_to_string.hpp">
+      <Filter>beast\core</Filter>
+    </ClInclude>
+    <ClInclude Include="boost\beast\core\detail\allocator.hpp">
+      <Filter>beast\core\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="boost\beast\core\detail\base64.hpp">
+      <Filter>beast\core\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="boost\beast\core\detail\bind_handler.hpp">
+      <Filter>beast\core\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="boost\beast\core\detail\buffer.hpp">
+      <Filter>beast\core\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="boost\beast\core\detail\buffers_ref.hpp">
+      <Filter>beast\core\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="boost\beast\core\detail\chacha.hpp">
+      <Filter>beast\core\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="boost\beast\core\detail\clamp.hpp">
+      <Filter>beast\core\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="boost\beast\core\detail\config.hpp">
+      <Filter>beast\core\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="boost\beast\core\detail\cpu_info.hpp">
+      <Filter>beast\core\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="boost\beast\core\detail\integer_sequence.hpp">
+      <Filter>beast\core\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="boost\beast\core\detail\ostream.hpp">
+      <Filter>beast\core\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="boost\beast\core\detail\sha1.hpp">
+      <Filter>beast\core\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="boost\beast\core\detail\static_ostream.hpp">
+      <Filter>beast\core\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="boost\beast\core\detail\static_string.hpp">
+      <Filter>beast\core\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="boost\beast\core\detail\type_traits.hpp">
+      <Filter>beast\core\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="boost\beast\core\detail\variant.hpp">
+      <Filter>beast\core\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="boost\beast\core\detail\varint.hpp">
+      <Filter>beast\core\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="boost\beast\core\error.hpp">
+      <Filter>beast\core</Filter>
+    </ClInclude>
+    <ClInclude Include="boost\beast\core\file.hpp">
+      <Filter>beast\core</Filter>
+    </ClInclude>
+    <ClInclude Include="boost\beast\core\file_base.hpp">
+      <Filter>beast\core</Filter>
+    </ClInclude>
+    <ClInclude Include="boost\beast\core\file_posix.hpp">
+      <Filter>beast\core</Filter>
+    </ClInclude>
+    <ClInclude Include="boost\beast\core\file_stdio.hpp">
+      <Filter>beast\core</Filter>
+    </ClInclude>
+    <ClInclude Include="boost\beast\core\file_win32.hpp">
+      <Filter>beast\core</Filter>
+    </ClInclude>
+    <ClInclude Include="boost\beast\core\flat_buffer.hpp">
+      <Filter>beast\core</Filter>
+    </ClInclude>
+    <ClInclude Include="boost\beast\core\flat_static_buffer.hpp">
+      <Filter>beast\core</Filter>
+    </ClInclude>
+    <ClInclude Include="boost\beast\core\handler_ptr.hpp">
+      <Filter>beast\core</Filter>
+    </ClInclude>
+    <ClInclude Include="boost\beast\core\multi_buffer.hpp">
+      <Filter>beast\core</Filter>
+    </ClInclude>
+    <ClInclude Include="boost\beast\core\ostream.hpp">
+      <Filter>beast\core</Filter>
+    </ClInclude>
+    <ClInclude Include="boost\beast\core\read_size.hpp">
+      <Filter>beast\core</Filter>
+    </ClInclude>
+    <ClInclude Include="boost\beast\core\span.hpp">
+      <Filter>beast\core</Filter>
+    </ClInclude>
+    <ClInclude Include="boost\beast\core\static_buffer.hpp">
+      <Filter>beast\core</Filter>
+    </ClInclude>
+    <ClInclude Include="boost\beast\core\static_string.hpp">
+      <Filter>beast\core</Filter>
+    </ClInclude>
+    <ClInclude Include="boost\beast\core\string.hpp">
+      <Filter>beast\core</Filter>
+    </ClInclude>
+    <ClInclude Include="boost\beast\core\string_param.hpp">
+      <Filter>beast\core</Filter>
+    </ClInclude>
+    <ClInclude Include="boost\beast\core\type_traits.hpp">
+      <Filter>beast\core</Filter>
+    </ClInclude>
+    <ClInclude Include="boost\beast\experimental\core\detail\flat_stream.hpp">
+      <Filter>beast\experimental\core\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="boost\beast\experimental\core\detail\service_base.hpp">
+      <Filter>beast\experimental\core\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="boost\beast\experimental\core\detail\timeout_service.hpp">
+      <Filter>beast\experimental\core\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="boost\beast\experimental\core\detail\timeout_work_guard.hpp">
+      <Filter>beast\experimental\core\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="boost\beast\experimental\core\flat_stream.hpp">
+      <Filter>beast\experimental\core</Filter>
+    </ClInclude>
+    <ClInclude Include="boost\beast\experimental\core\impl\timeout_socket.hpp">
+      <Filter>beast\experimental\core\impl</Filter>
+    </ClInclude>
+    <ClInclude Include="boost\beast\experimental\core\ssl_stream.hpp">
+      <Filter>beast\experimental\core</Filter>
+    </ClInclude>
+    <ClInclude Include="boost\beast\experimental\core\timeout_service.hpp">
+      <Filter>beast\experimental\core</Filter>
+    </ClInclude>
+    <ClInclude Include="boost\beast\experimental\core\timeout_socket.hpp">
+      <Filter>beast\experimental\core</Filter>
+    </ClInclude>
+    <ClInclude Include="boost\beast\experimental\http\icy_stream.hpp">
+      <Filter>beast\experimental\http</Filter>
+    </ClInclude>
+    <ClInclude Include="boost\beast\experimental\test\detail\error.hpp">
+      <Filter>beast\experimental\test\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="boost\beast\experimental\test\error.hpp">
+      <Filter>beast\experimental\test</Filter>
+    </ClInclude>
+    <ClInclude Include="boost\beast\experimental\test\fail_count.hpp">
+      <Filter>beast\experimental\test</Filter>
+    </ClInclude>
+    <ClInclude Include="boost\beast\experimental\test\stream.hpp">
+      <Filter>beast\experimental\test</Filter>
+    </ClInclude>
+    <ClInclude Include="boost\beast\http.hpp">
+      <Filter>beast</Filter>
+    </ClInclude>
+    <ClInclude Include="boost\beast\http\basic_dynamic_body.hpp">
+      <Filter>beast\http</Filter>
+    </ClInclude>
+    <ClInclude Include="boost\beast\http\basic_file_body.hpp">
+      <Filter>beast\http</Filter>
+    </ClInclude>
+    <ClInclude Include="boost\beast\http\basic_parser.hpp">
+      <Filter>beast\http</Filter>
+    </ClInclude>
+    <ClInclude Include="boost\beast\http\buffer_body.hpp">
+      <Filter>beast\http</Filter>
+    </ClInclude>
+    <ClInclude Include="boost\beast\http\chunk_encode.hpp">
+      <Filter>beast\http</Filter>
+    </ClInclude>
+    <ClInclude Include="boost\beast\http\detail\basic_parsed_list.hpp">
+      <Filter>beast\http\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="boost\beast\http\detail\basic_parser.hpp">
+      <Filter>beast\http\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="boost\beast\http\detail\chunk_encode.hpp">
+      <Filter>beast\http\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="boost\beast\http\detail\rfc7230.hpp">
+      <Filter>beast\http\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="boost\beast\http\detail\type_traits.hpp">
+      <Filter>beast\http\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="boost\beast\http\dynamic_body.hpp">
+      <Filter>beast\http</Filter>
+    </ClInclude>
+    <ClInclude Include="boost\beast\http\empty_body.hpp">
+      <Filter>beast\http</Filter>
+    </ClInclude>
+    <ClInclude Include="boost\beast\http\error.hpp">
+      <Filter>beast\http</Filter>
+    </ClInclude>
+    <ClInclude Include="boost\beast\http\field.hpp">
+      <Filter>beast\http</Filter>
+    </ClInclude>
+    <ClInclude Include="boost\beast\http\fields.hpp">
+      <Filter>beast\http</Filter>
+    </ClInclude>
+    <ClInclude Include="boost\beast\http\file_body.hpp">
+      <Filter>beast\http</Filter>
+    </ClInclude>
+    <ClInclude Include="boost\beast\http\message.hpp">
+      <Filter>beast\http</Filter>
+    </ClInclude>
+    <ClInclude Include="boost\beast\http\parser.hpp">
+      <Filter>beast\http</Filter>
+    </ClInclude>
+    <ClInclude Include="boost\beast\http\read.hpp">
+      <Filter>beast\http</Filter>
+    </ClInclude>
+    <ClInclude Include="boost\beast\http\rfc7230.hpp">
+      <Filter>beast\http</Filter>
+    </ClInclude>
+    <ClInclude Include="boost\beast\http\serializer.hpp">
+      <Filter>beast\http</Filter>
+    </ClInclude>
+    <ClInclude Include="boost\beast\http\span_body.hpp">
+      <Filter>beast\http</Filter>
+    </ClInclude>
+    <ClInclude Include="boost\beast\http\status.hpp">
+      <Filter>beast\http</Filter>
+    </ClInclude>
+    <ClInclude Include="boost\beast\http\string_body.hpp">
+      <Filter>beast\http</Filter>
+    </ClInclude>
+    <ClInclude Include="boost\beast\http\type_traits.hpp">
+      <Filter>beast\http</Filter>
+    </ClInclude>
+    <ClInclude Include="boost\beast\http\vector_body.hpp">
+      <Filter>beast\http</Filter>
+    </ClInclude>
+    <ClInclude Include="boost\beast\http\verb.hpp">
+      <Filter>beast\http</Filter>
+    </ClInclude>
+    <ClInclude Include="boost\beast\http\write.hpp">
+      <Filter>beast\http</Filter>
+    </ClInclude>
+    <ClInclude Include="boost\beast\version.hpp">
+      <Filter>beast</Filter>
+    </ClInclude>
+    <ClInclude Include="boost\beast\websocket.hpp">
+      <Filter>beast</Filter>
+    </ClInclude>
+    <ClInclude Include="boost\beast\websocket\detail\error.hpp">
+      <Filter>beast\websocket\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="boost\beast\websocket\detail\frame.hpp">
+      <Filter>beast\websocket\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="boost\beast\websocket\detail\hybi13.hpp">
+      <Filter>beast\websocket\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="boost\beast\websocket\detail\mask.hpp">
+      <Filter>beast\websocket\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="boost\beast\websocket\detail\pausation.hpp">
+      <Filter>beast\websocket\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="boost\beast\websocket\detail\pmd_extension.hpp">
+      <Filter>beast\websocket\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="boost\beast\websocket\detail\stream_base.hpp">
+      <Filter>beast\websocket\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="boost\beast\websocket\detail\type_traits.hpp">
+      <Filter>beast\websocket\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="boost\beast\websocket\detail\utf8_checker.hpp">
+      <Filter>beast\websocket\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="boost\beast\websocket\error.hpp">
+      <Filter>beast\websocket</Filter>
+    </ClInclude>
+    <ClInclude Include="boost\beast\websocket\option.hpp">
+      <Filter>beast\websocket</Filter>
+    </ClInclude>
+    <ClInclude Include="boost\beast\websocket\rfc6455.hpp">
+      <Filter>beast\websocket</Filter>
+    </ClInclude>
+    <ClInclude Include="boost\beast\websocket\role.hpp">
+      <Filter>beast\websocket</Filter>
+    </ClInclude>
+    <ClInclude Include="boost\beast\websocket\ssl.hpp">
+      <Filter>beast\websocket</Filter>
+    </ClInclude>
+    <ClInclude Include="boost\beast\websocket\stream.hpp">
+      <Filter>beast\websocket</Filter>
+    </ClInclude>
+    <ClInclude Include="boost\beast\websocket\stream_fwd.hpp">
+      <Filter>beast\websocket</Filter>
+    </ClInclude>
+    <ClInclude Include="boost\beast\websocket\teardown.hpp">
+      <Filter>beast\websocket</Filter>
+    </ClInclude>
+    <ClInclude Include="boost\beast\zlib.hpp">
+      <Filter>beast</Filter>
+    </ClInclude>
+    <ClInclude Include="boost\beast\zlib\deflate_stream.hpp">
+      <Filter>beast\zlib</Filter>
+    </ClInclude>
+    <ClInclude Include="boost\beast\zlib\detail\bitstream.hpp">
+      <Filter>beast\zlib\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="boost\beast\zlib\detail\deflate_stream.hpp">
+      <Filter>beast\zlib\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="boost\beast\zlib\detail\inflate_stream.hpp">
+      <Filter>beast\zlib\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="boost\beast\zlib\detail\ranges.hpp">
+      <Filter>beast\zlib\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="boost\beast\zlib\detail\window.hpp">
+      <Filter>beast\zlib\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="boost\beast\zlib\error.hpp">
+      <Filter>beast\zlib</Filter>
+    </ClInclude>
+    <ClInclude Include="boost\beast\zlib\inflate_stream.hpp">
+      <Filter>beast\zlib</Filter>
+    </ClInclude>
+    <ClInclude Include="boost\beast\zlib\zlib.hpp">
+      <Filter>beast\zlib</Filter>
+    </ClInclude>
+    <ClInclude Include="TrafficLightStateMachine.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TrafficLight.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\..\Downloads\json-develop\json-develop\single_include\nlohmann\json.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\annepieter\boost\libs\beast\example\websocket\server\sync\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="boost\beast\core\impl\buffered_read_stream.ipp">
+      <Filter>beast\core\impl</Filter>
+    </None>
+    <None Include="boost\beast\core\impl\buffers_adapter.ipp">
+      <Filter>beast\core\impl</Filter>
+    </None>
+    <None Include="boost\beast\core\impl\buffers_cat.ipp">
+      <Filter>beast\core\impl</Filter>
+    </None>
+    <None Include="boost\beast\core\impl\buffers_prefix.ipp">
+      <Filter>beast\core\impl</Filter>
+    </None>
+    <None Include="boost\beast\core\impl\buffers_suffix.ipp">
+      <Filter>beast\core\impl</Filter>
+    </None>
+    <None Include="boost\beast\core\impl\file_posix.ipp">
+      <Filter>beast\core\impl</Filter>
+    </None>
+    <None Include="boost\beast\core\impl\file_stdio.ipp">
+      <Filter>beast\core\impl</Filter>
+    </None>
+    <None Include="boost\beast\core\impl\file_win32.ipp">
+      <Filter>beast\core\impl</Filter>
+    </None>
+    <None Include="boost\beast\core\impl\flat_buffer.ipp">
+      <Filter>beast\core\impl</Filter>
+    </None>
+    <None Include="boost\beast\core\impl\flat_static_buffer.ipp">
+      <Filter>beast\core\impl</Filter>
+    </None>
+    <None Include="boost\beast\core\impl\handler_ptr.ipp">
+      <Filter>beast\core\impl</Filter>
+    </None>
+    <None Include="boost\beast\core\impl\multi_buffer.ipp">
+      <Filter>beast\core\impl</Filter>
+    </None>
+    <None Include="boost\beast\core\impl\read_size.ipp">
+      <Filter>beast\core\impl</Filter>
+    </None>
+    <None Include="boost\beast\core\impl\static_buffer.ipp">
+      <Filter>beast\core\impl</Filter>
+    </None>
+    <None Include="boost\beast\core\impl\static_string.ipp">
+      <Filter>beast\core\impl</Filter>
+    </None>
+    <None Include="boost\beast\core\impl\string_param.ipp">
+      <Filter>beast\core\impl</Filter>
+    </None>
+    <None Include="boost\beast\experimental\core\detail\impl\timeout_service.ipp">
+      <Filter>beast\experimental\core\detail\impl</Filter>
+    </None>
+    <None Include="boost\beast\experimental\core\impl\flat_stream.ipp">
+      <Filter>beast\experimental\core\impl</Filter>
+    </None>
+    <None Include="boost\beast\experimental\core\impl\timeout_service.ipp">
+      <Filter>beast\experimental\core\impl</Filter>
+    </None>
+    <None Include="boost\beast\experimental\http\impl\icy_stream.ipp">
+      <Filter>beast\experimental\http\impl</Filter>
+    </None>
+    <None Include="boost\beast\experimental\test\impl\error.ipp">
+      <Filter>beast\experimental\test\impl</Filter>
+    </None>
+    <None Include="boost\beast\experimental\test\impl\fail_count.ipp">
+      <Filter>beast\experimental\test\impl</Filter>
+    </None>
+    <None Include="boost\beast\experimental\test\impl\stream.ipp">
+      <Filter>beast\experimental\test\impl</Filter>
+    </None>
+    <None Include="boost\beast\http\impl\basic_parser.ipp">
+      <Filter>beast\http\impl</Filter>
+    </None>
+    <None Include="boost\beast\http\impl\chunk_encode.ipp">
+      <Filter>beast\http\impl</Filter>
+    </None>
+    <None Include="boost\beast\http\impl\error.ipp">
+      <Filter>beast\http\impl</Filter>
+    </None>
+    <None Include="boost\beast\http\impl\field.ipp">
+      <Filter>beast\http\impl</Filter>
+    </None>
+    <None Include="boost\beast\http\impl\fields.ipp">
+      <Filter>beast\http\impl</Filter>
+    </None>
+    <None Include="boost\beast\http\impl\file_body_win32.ipp">
+      <Filter>beast\http\impl</Filter>
+    </None>
+    <None Include="boost\beast\http\impl\message.ipp">
+      <Filter>beast\http\impl</Filter>
+    </None>
+    <None Include="boost\beast\http\impl\parser.ipp">
+      <Filter>beast\http\impl</Filter>
+    </None>
+    <None Include="boost\beast\http\impl\read.ipp">
+      <Filter>beast\http\impl</Filter>
+    </None>
+    <None Include="boost\beast\http\impl\rfc7230.ipp">
+      <Filter>beast\http\impl</Filter>
+    </None>
+    <None Include="boost\beast\http\impl\serializer.ipp">
+      <Filter>beast\http\impl</Filter>
+    </None>
+    <None Include="boost\beast\http\impl\status.ipp">
+      <Filter>beast\http\impl</Filter>
+    </None>
+    <None Include="boost\beast\http\impl\verb.ipp">
+      <Filter>beast\http\impl</Filter>
+    </None>
+    <None Include="boost\beast\http\impl\write.ipp">
+      <Filter>beast\http\impl</Filter>
+    </None>
+    <None Include="boost\beast\websocket\impl\accept.ipp">
+      <Filter>beast\websocket\impl</Filter>
+    </None>
+    <None Include="boost\beast\websocket\impl\close.ipp">
+      <Filter>beast\websocket\impl</Filter>
+    </None>
+    <None Include="boost\beast\websocket\impl\error.ipp">
+      <Filter>beast\websocket\impl</Filter>
+    </None>
+    <None Include="boost\beast\websocket\impl\handshake.ipp">
+      <Filter>beast\websocket\impl</Filter>
+    </None>
+    <None Include="boost\beast\websocket\impl\ping.ipp">
+      <Filter>beast\websocket\impl</Filter>
+    </None>
+    <None Include="boost\beast\websocket\impl\read.ipp">
+      <Filter>beast\websocket\impl</Filter>
+    </None>
+    <None Include="boost\beast\websocket\impl\rfc6455.ipp">
+      <Filter>beast\websocket\impl</Filter>
+    </None>
+    <None Include="boost\beast\websocket\impl\ssl.ipp">
+      <Filter>beast\websocket\impl</Filter>
+    </None>
+    <None Include="boost\beast\websocket\impl\stream.ipp">
+      <Filter>beast\websocket\impl</Filter>
+    </None>
+    <None Include="boost\beast\websocket\impl\teardown.ipp">
+      <Filter>beast\websocket\impl</Filter>
+    </None>
+    <None Include="boost\beast\websocket\impl\write.ipp">
+      <Filter>beast\websocket\impl</Filter>
+    </None>
+    <None Include="boost\beast\zlib\impl\error.ipp">
+      <Filter>beast\zlib\impl</Filter>
+    </None>
+    <None Include="C:\Users\annepieter\boost\libs\beast\example\websocket\server\sync\Jamfile" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="beast">
+      <UniqueIdentifier>{1A5F364E-F39F-3C0B-81FE-38C05EBA82E8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="beast\core">
+      <UniqueIdentifier>{9623B65B-330C-3F11-B068-A39D71B9BD2B}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="beast\core\detail">
+      <UniqueIdentifier>{3B380B62-2391-3EFF-AD89-FC561DE42636}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="beast\core\impl">
+      <UniqueIdentifier>{D06DE52E-EE41-3154-B3A4-8FA385024864}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="beast\experimental">
+      <UniqueIdentifier>{7A440F06-A978-326B-AB00-BC2D2A8E8C68}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="beast\experimental\core">
+      <UniqueIdentifier>{D909F691-3F5F-3D69-A32B-357BE0DC6527}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="beast\experimental\core\detail">
+      <UniqueIdentifier>{3F0DA0FA-5849-34A3-BC0C-4A2A6CE6590D}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="beast\experimental\core\detail\impl">
+      <UniqueIdentifier>{2F6D0D12-BC54-30F6-AA75-D48B36B06637}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="beast\experimental\core\impl">
+      <UniqueIdentifier>{1E5A68A3-C6E0-3AF3-A94C-2DD20EF3853F}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="beast\experimental\http">
+      <UniqueIdentifier>{E63A5369-CE70-3F45-8D78-F4B5658E7A74}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="beast\experimental\http\impl">
+      <UniqueIdentifier>{B34BA421-2E31-341B-BD08-C8D31F4017D4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="beast\experimental\test">
+      <UniqueIdentifier>{5E9BD2C8-565B-3A95-AEB8-FCCF50BE2B56}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="beast\experimental\test\detail">
+      <UniqueIdentifier>{E25D90FD-481C-31BE-942C-7FAD01B448CD}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="beast\experimental\test\impl">
+      <UniqueIdentifier>{4A6C002D-9C1F-3614-B347-C72C7E4299B2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="beast\http">
+      <UniqueIdentifier>{DF597749-A42E-3AA7-A497-B32A8D7D0821}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="beast\http\detail">
+      <UniqueIdentifier>{4CBF78E6-8A0A-3444-BCC0-A33EAAF98D7E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="beast\http\impl">
+      <UniqueIdentifier>{63489FB6-E0C8-3578-A2D7-CFF610137115}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="beast\websocket">
+      <UniqueIdentifier>{313D7287-4C14-38FD-921F-AED008FC732B}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="beast\websocket\detail">
+      <UniqueIdentifier>{DAC7CCBE-70FF-3A82-A73F-5B7C8388C421}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="beast\websocket\impl">
+      <UniqueIdentifier>{746D3018-4A18-34D9-B59E-C20020A4063F}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="beast\zlib">
+      <UniqueIdentifier>{A09E7D0F-473E-3BB8-96F4-1E458389F2C4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="beast\zlib\detail">
+      <UniqueIdentifier>{3DE2C9D5-3DBC-3631-B8BE-58A1246A8891}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="beast\zlib\impl">
+      <UniqueIdentifier>{0D268DA0-14E4-3E0E-A9FA-2F033E92D2CB}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{c28ad633-05f9-4636-a884-c5e7892db475}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{d51f0c87-9036-4ba8-b019-f74678021e57}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,502 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="MinSizeRel|x64">
+      <Configuration>MinSizeRel</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|x64">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{B7BA971E-CCBD-3DA0-B514-4E0FE1195D65}</ProjectGuid>
+    <WindowsTargetPlatformVersion>10.0.17134.0</WindowsTargetPlatformVersion>
+    <Keyword>Win32Proj</Keyword>
+    <Platform>x64</Platform>
+    <ProjectName>Software Development</ProjectName>
+    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">SoftwareDevelopment</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\annepieter\boost\libs\beast\example\websocket\server\sync\Release\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">websocket-server-sync.dir\Release\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">websocket-server-sync</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\annepieter\boost\libs\beast\example\websocket\server\sync\MinSizeRel\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">websocket-server-sync.dir\MinSizeRel\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">websocket-server-sync</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\annepieter\boost\libs\beast\example\websocket\server\sync\RelWithDebInfo\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">websocket-server-sync.dir\RelWithDebInfo\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">websocket-server-sync</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">true</GenerateManifest>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\Users\annepieter\boost\libs\beast\include;C:\Users\annepieter\boost;C:\Users\annepieter\boost\libs\beast\.;%(AdditionalIncludeDirectories); C:\Users\annepieter\Downloads\json-develop\json-develop\single_include</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /bigobj /permissive-</AdditionalOptions>
+      <AssemblerListingLocation>Debug/</AssemblerListingLocation>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <Optimization>Disabled</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <WarningLevel>Level4</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_WIN32_WINNT=0x0601;_SCL_SECURE_NO_WARNINGS=1;_CRT_SECURE_NO_WARNINGS=1;BOOST_ALL_STATIC_LINK=1;BOOST_ASIO_DISABLE_BOOST_ARRAY=1;BOOST_ASIO_DISABLE_BOOST_BIND=1;BOOST_ASIO_DISABLE_BOOST_DATE_TIME=1;BOOST_ASIO_DISABLE_BOOST_REGEX=1;BOOST_COROUTINES_NO_DEPRECATION_WARNING=1;BOOST_BEAST_USE_OPENSSL=0;CMAKE_INTDIR="Debug";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_WIN32_WINNT=0x0601;_SCL_SECURE_NO_WARNINGS=1;_CRT_SECURE_NO_WARNINGS=1;BOOST_ALL_STATIC_LINK=1;BOOST_ASIO_DISABLE_BOOST_ARRAY=1;BOOST_ASIO_DISABLE_BOOST_BIND=1;BOOST_ASIO_DISABLE_BOOST_DATE_TIME=1;BOOST_ASIO_DISABLE_BOOST_REGEX=1;BOOST_COROUTINES_NO_DEPRECATION_WARNING=1;BOOST_BEAST_USE_OPENSSL=0;CMAKE_INTDIR=\"Debug\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\annepieter\boost\libs\beast\include;C:\Users\annepieter\boost;C:\Users\annepieter\boost\libs\beast\.;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\annepieter\boost\libs\beast\include;C:\Users\annepieter\boost;C:\Users\annepieter\boost\libs\beast\.;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:/Users/annepieter/boost/stage/lib;C:/Users/annepieter/boost/stage/lib/$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
+      <ImportLibrary>C:/Users/annepieter/boost/libs/beast/example/websocket/server/sync/Debug/websocket-server-sync.lib</ImportLibrary>
+      <ProgramDataBaseFile>C:/Users/annepieter/boost/libs/beast/example/websocket/server/sync/Debug/websocket-server-sync.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\Users\annepieter\boost\libs\beast\include;C:\Users\annepieter\boost;C:\Users\annepieter\boost\libs\beast\.;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /bigobj /permissive-</AdditionalOptions>
+      <AssemblerListingLocation>Release/</AssemblerListingLocation>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <WarningLevel>Level4</WarningLevel>
+      <WholeProgramOptimization>true</WholeProgramOptimization>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;_WIN32_WINNT=0x0601;_SCL_SECURE_NO_WARNINGS=1;_CRT_SECURE_NO_WARNINGS=1;BOOST_ALL_STATIC_LINK=1;BOOST_ASIO_DISABLE_BOOST_ARRAY=1;BOOST_ASIO_DISABLE_BOOST_BIND=1;BOOST_ASIO_DISABLE_BOOST_DATE_TIME=1;BOOST_ASIO_DISABLE_BOOST_REGEX=1;BOOST_COROUTINES_NO_DEPRECATION_WARNING=1;BOOST_BEAST_USE_OPENSSL=0;CMAKE_INTDIR="Release";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;_WIN32_WINNT=0x0601;_SCL_SECURE_NO_WARNINGS=1;_CRT_SECURE_NO_WARNINGS=1;BOOST_ALL_STATIC_LINK=1;BOOST_ASIO_DISABLE_BOOST_ARRAY=1;BOOST_ASIO_DISABLE_BOOST_BIND=1;BOOST_ASIO_DISABLE_BOOST_DATE_TIME=1;BOOST_ASIO_DISABLE_BOOST_REGEX=1;BOOST_COROUTINES_NO_DEPRECATION_WARNING=1;BOOST_BEAST_USE_OPENSSL=0;CMAKE_INTDIR=\"Release\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\annepieter\boost\libs\beast\include;C:\Users\annepieter\boost;C:\Users\annepieter\boost\libs\beast\.;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\annepieter\boost\libs\beast\include;C:\Users\annepieter\boost;C:\Users\annepieter\boost\libs\beast\.;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:/Users/annepieter/boost/stage/lib;C:/Users/annepieter/boost/stage/lib/$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
+      <ImportLibrary>C:/Users/annepieter/boost/libs/beast/example/websocket/server/sync/Release/websocket-server-sync.lib</ImportLibrary>
+      <LinkTimeCodeGeneration>UseLinkTimeCodeGeneration</LinkTimeCodeGeneration>
+      <ProgramDataBaseFile>C:/Users/annepieter/boost/libs/beast/example/websocket/server/sync/Release/websocket-server-sync.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\Users\annepieter\boost\libs\beast\include;C:\Users\annepieter\boost;C:\Users\annepieter\boost\libs\beast\.;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /bigobj /permissive-</AdditionalOptions>
+      <AssemblerListingLocation>MinSizeRel/</AssemblerListingLocation>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <Optimization>MinSpace</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <WarningLevel>Level4</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;_WIN32_WINNT=0x0601;_SCL_SECURE_NO_WARNINGS=1;_CRT_SECURE_NO_WARNINGS=1;BOOST_ALL_STATIC_LINK=1;BOOST_ASIO_DISABLE_BOOST_ARRAY=1;BOOST_ASIO_DISABLE_BOOST_BIND=1;BOOST_ASIO_DISABLE_BOOST_DATE_TIME=1;BOOST_ASIO_DISABLE_BOOST_REGEX=1;BOOST_COROUTINES_NO_DEPRECATION_WARNING=1;BOOST_BEAST_USE_OPENSSL=0;CMAKE_INTDIR="MinSizeRel";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;_WIN32_WINNT=0x0601;_SCL_SECURE_NO_WARNINGS=1;_CRT_SECURE_NO_WARNINGS=1;BOOST_ALL_STATIC_LINK=1;BOOST_ASIO_DISABLE_BOOST_ARRAY=1;BOOST_ASIO_DISABLE_BOOST_BIND=1;BOOST_ASIO_DISABLE_BOOST_DATE_TIME=1;BOOST_ASIO_DISABLE_BOOST_REGEX=1;BOOST_COROUTINES_NO_DEPRECATION_WARNING=1;BOOST_BEAST_USE_OPENSSL=0;CMAKE_INTDIR=\"MinSizeRel\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\annepieter\boost\libs\beast\include;C:\Users\annepieter\boost;C:\Users\annepieter\boost\libs\beast\.;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\annepieter\boost\libs\beast\include;C:\Users\annepieter\boost;C:\Users\annepieter\boost\libs\beast\.;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:/Users/annepieter/boost/stage/lib;C:/Users/annepieter/boost/stage/lib/$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
+      <ImportLibrary>C:/Users/annepieter/boost/libs/beast/example/websocket/server/sync/MinSizeRel/websocket-server-sync.lib</ImportLibrary>
+      <ProgramDataBaseFile>C:/Users/annepieter/boost/libs/beast/example/websocket/server/sync/MinSizeRel/websocket-server-sync.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\Users\annepieter\boost\libs\beast\include;C:\Users\annepieter\boost;C:\Users\annepieter\boost\libs\beast\.;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /bigobj /permissive-</AdditionalOptions>
+      <AssemblerListingLocation>RelWithDebInfo/</AssemblerListingLocation>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <WarningLevel>Level4</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;_WIN32_WINNT=0x0601;_SCL_SECURE_NO_WARNINGS=1;_CRT_SECURE_NO_WARNINGS=1;BOOST_ALL_STATIC_LINK=1;BOOST_ASIO_DISABLE_BOOST_ARRAY=1;BOOST_ASIO_DISABLE_BOOST_BIND=1;BOOST_ASIO_DISABLE_BOOST_DATE_TIME=1;BOOST_ASIO_DISABLE_BOOST_REGEX=1;BOOST_COROUTINES_NO_DEPRECATION_WARNING=1;BOOST_BEAST_USE_OPENSSL=0;CMAKE_INTDIR="RelWithDebInfo";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;_WIN32_WINNT=0x0601;_SCL_SECURE_NO_WARNINGS=1;_CRT_SECURE_NO_WARNINGS=1;BOOST_ALL_STATIC_LINK=1;BOOST_ASIO_DISABLE_BOOST_ARRAY=1;BOOST_ASIO_DISABLE_BOOST_BIND=1;BOOST_ASIO_DISABLE_BOOST_DATE_TIME=1;BOOST_ASIO_DISABLE_BOOST_REGEX=1;BOOST_COROUTINES_NO_DEPRECATION_WARNING=1;BOOST_BEAST_USE_OPENSSL=0;CMAKE_INTDIR=\"RelWithDebInfo\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\annepieter\boost\libs\beast\include;C:\Users\annepieter\boost;C:\Users\annepieter\boost\libs\beast\.;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\annepieter\boost\libs\beast\include;C:\Users\annepieter\boost;C:\Users\annepieter\boost\libs\beast\.;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:/Users/annepieter/boost/stage/lib;C:/Users/annepieter/boost/stage/lib/$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
+      <ImportLibrary>C:/Users/annepieter/boost/libs/beast/example/websocket/server/sync/RelWithDebInfo/websocket-server-sync.lib</ImportLibrary>
+      <ProgramDataBaseFile>C:/Users/annepieter/boost/libs/beast/example/websocket/server/sync/RelWithDebInfo/websocket-server-sync.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\annepieter\boost\libs\beast\example\websocket\server\sync\CMakeLists.txt">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule C:/Users/annepieter/boost/libs/beast/example/websocket/server/sync/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -HC:/Users/annepieter/boost/libs/beast -BC:/Users/annepieter/boost/libs/beast --check-stamp-file C:/Users/annepieter/boost/libs/beast/example/websocket/server/sync/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:/Users/annepieter/boost/libs/beast/example/websocket/server/sync/CMakeLists.txt;C:\Users\annepieter\boost\libs\beast\example\websocket\server\sync\CMakeLists.txt;C:\Users\annepieter\boost\libs\beast\example\websocket\server\sync\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\annepieter\boost\libs\beast\example\websocket\server\sync\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule C:/Users/annepieter/boost/libs/beast/example/websocket/server/sync/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -HC:/Users/annepieter/boost/libs/beast -BC:/Users/annepieter/boost/libs/beast --check-stamp-file C:/Users/annepieter/boost/libs/beast/example/websocket/server/sync/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:/Users/annepieter/boost/libs/beast/example/websocket/server/sync/CMakeLists.txt;C:\Users\annepieter\boost\libs\beast\example\websocket\server\sync\CMakeLists.txt;C:\Users\annepieter\boost\libs\beast\example\websocket\server\sync\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\annepieter\boost\libs\beast\example\websocket\server\sync\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule C:/Users/annepieter/boost/libs/beast/example/websocket/server/sync/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -HC:/Users/annepieter/boost/libs/beast -BC:/Users/annepieter/boost/libs/beast --check-stamp-file C:/Users/annepieter/boost/libs/beast/example/websocket/server/sync/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:/Users/annepieter/boost/libs/beast/example/websocket/server/sync/CMakeLists.txt;C:\Users\annepieter\boost\libs\beast\example\websocket\server\sync\CMakeLists.txt;C:\Users\annepieter\boost\libs\beast\example\websocket\server\sync\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\annepieter\boost\libs\beast\example\websocket\server\sync\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule C:/Users/annepieter/boost/libs/beast/example/websocket/server/sync/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -HC:/Users/annepieter/boost/libs/beast -BC:/Users/annepieter/boost/libs/beast --check-stamp-file C:/Users/annepieter/boost/libs/beast/example/websocket/server/sync/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:/Users/annepieter/boost/libs/beast/example/websocket/server/sync/CMakeLists.txt;C:\Users\annepieter\boost\libs\beast\example\websocket\server\sync\CMakeLists.txt;C:\Users\annepieter\boost\libs\beast\example\websocket\server\sync\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\annepieter\boost\libs\beast\example\websocket\server\sync\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="TrafficLightStateMachine.cpp" />
+    <ClInclude Include="..\..\..\..\..\..\..\Downloads\json-develop\json-develop\single_include\nlohmann\json.hpp" />
+    <ClInclude Include="boost\beast\core.hpp" />
+    <ClInclude Include="boost\beast\core\bind_handler.hpp" />
+    <ClInclude Include="boost\beast\core\buffered_read_stream.hpp" />
+    <ClInclude Include="boost\beast\core\buffers_adapter.hpp" />
+    <ClInclude Include="boost\beast\core\buffers_cat.hpp" />
+    <ClInclude Include="boost\beast\core\buffers_prefix.hpp" />
+    <ClInclude Include="boost\beast\core\buffers_suffix.hpp" />
+    <ClInclude Include="boost\beast\core\buffers_to_string.hpp" />
+    <ClInclude Include="boost\beast\core\detail\allocator.hpp" />
+    <ClInclude Include="boost\beast\core\detail\base64.hpp" />
+    <ClInclude Include="boost\beast\core\detail\bind_handler.hpp" />
+    <ClInclude Include="boost\beast\core\detail\buffer.hpp" />
+    <ClInclude Include="boost\beast\core\detail\buffers_ref.hpp" />
+    <ClInclude Include="boost\beast\core\detail\chacha.hpp" />
+    <ClInclude Include="boost\beast\core\detail\clamp.hpp" />
+    <ClInclude Include="boost\beast\core\detail\config.hpp" />
+    <ClInclude Include="boost\beast\core\detail\cpu_info.hpp" />
+    <ClInclude Include="boost\beast\core\detail\integer_sequence.hpp" />
+    <ClInclude Include="boost\beast\core\detail\ostream.hpp" />
+    <ClInclude Include="boost\beast\core\detail\sha1.hpp" />
+    <ClInclude Include="boost\beast\core\detail\static_ostream.hpp" />
+    <ClInclude Include="boost\beast\core\detail\static_string.hpp" />
+    <ClInclude Include="boost\beast\core\detail\type_traits.hpp" />
+    <ClInclude Include="boost\beast\core\detail\variant.hpp" />
+    <ClInclude Include="boost\beast\core\detail\varint.hpp" />
+    <ClInclude Include="boost\beast\core\error.hpp" />
+    <ClInclude Include="boost\beast\core\file.hpp" />
+    <ClInclude Include="boost\beast\core\file_base.hpp" />
+    <ClInclude Include="boost\beast\core\file_posix.hpp" />
+    <ClInclude Include="boost\beast\core\file_stdio.hpp" />
+    <ClInclude Include="boost\beast\core\file_win32.hpp" />
+    <ClInclude Include="boost\beast\core\flat_buffer.hpp" />
+    <ClInclude Include="boost\beast\core\flat_static_buffer.hpp" />
+    <ClInclude Include="boost\beast\core\handler_ptr.hpp" />
+    <ClInclude Include="TrafficLight.h" />
+    <ClInclude Include="TrafficLightStateMachine.h" />
+    <None Include="boost\beast\core\impl\buffered_read_stream.ipp" />
+    <None Include="boost\beast\core\impl\buffers_adapter.ipp" />
+    <None Include="boost\beast\core\impl\buffers_cat.ipp" />
+    <None Include="boost\beast\core\impl\buffers_prefix.ipp" />
+    <None Include="boost\beast\core\impl\buffers_suffix.ipp" />
+    <None Include="boost\beast\core\impl\file_posix.ipp" />
+    <None Include="boost\beast\core\impl\file_stdio.ipp" />
+    <None Include="boost\beast\core\impl\file_win32.ipp" />
+    <None Include="boost\beast\core\impl\flat_buffer.ipp" />
+    <None Include="boost\beast\core\impl\flat_static_buffer.ipp" />
+    <None Include="boost\beast\core\impl\handler_ptr.ipp" />
+    <None Include="boost\beast\core\impl\multi_buffer.ipp" />
+    <None Include="boost\beast\core\impl\read_size.ipp" />
+    <None Include="boost\beast\core\impl\static_buffer.ipp" />
+    <None Include="boost\beast\core\impl\static_string.ipp" />
+    <None Include="boost\beast\core\impl\string_param.ipp" />
+    <ClInclude Include="boost\beast\core\multi_buffer.hpp" />
+    <ClInclude Include="boost\beast\core\ostream.hpp" />
+    <ClInclude Include="boost\beast\core\read_size.hpp" />
+    <ClInclude Include="boost\beast\core\span.hpp" />
+    <ClInclude Include="boost\beast\core\static_buffer.hpp" />
+    <ClInclude Include="boost\beast\core\static_string.hpp" />
+    <ClInclude Include="boost\beast\core\string.hpp" />
+    <ClInclude Include="boost\beast\core\string_param.hpp" />
+    <ClInclude Include="boost\beast\core\type_traits.hpp" />
+    <ClInclude Include="boost\beast\experimental\core\detail\flat_stream.hpp" />
+    <None Include="boost\beast\experimental\core\detail\impl\timeout_service.ipp" />
+    <ClInclude Include="boost\beast\experimental\core\detail\service_base.hpp" />
+    <ClInclude Include="boost\beast\experimental\core\detail\timeout_service.hpp" />
+    <ClInclude Include="boost\beast\experimental\core\detail\timeout_work_guard.hpp" />
+    <ClInclude Include="boost\beast\experimental\core\flat_stream.hpp" />
+    <None Include="boost\beast\experimental\core\impl\flat_stream.ipp" />
+    <None Include="boost\beast\experimental\core\impl\timeout_service.ipp" />
+    <ClInclude Include="boost\beast\experimental\core\impl\timeout_socket.hpp" />
+    <ClInclude Include="boost\beast\experimental\core\ssl_stream.hpp" />
+    <ClInclude Include="boost\beast\experimental\core\timeout_service.hpp" />
+    <ClInclude Include="boost\beast\experimental\core\timeout_socket.hpp" />
+    <ClInclude Include="boost\beast\experimental\http\icy_stream.hpp" />
+    <None Include="boost\beast\experimental\http\impl\icy_stream.ipp" />
+    <ClInclude Include="boost\beast\experimental\test\detail\error.hpp" />
+    <ClInclude Include="boost\beast\experimental\test\error.hpp" />
+    <ClInclude Include="boost\beast\experimental\test\fail_count.hpp" />
+    <None Include="boost\beast\experimental\test\impl\error.ipp" />
+    <None Include="boost\beast\experimental\test\impl\fail_count.ipp" />
+    <None Include="boost\beast\experimental\test\impl\stream.ipp" />
+    <ClInclude Include="boost\beast\experimental\test\stream.hpp" />
+    <ClInclude Include="boost\beast\http.hpp" />
+    <ClInclude Include="boost\beast\http\basic_dynamic_body.hpp" />
+    <ClInclude Include="boost\beast\http\basic_file_body.hpp" />
+    <ClInclude Include="boost\beast\http\basic_parser.hpp" />
+    <ClInclude Include="boost\beast\http\buffer_body.hpp" />
+    <ClInclude Include="boost\beast\http\chunk_encode.hpp" />
+    <ClInclude Include="boost\beast\http\detail\basic_parsed_list.hpp" />
+    <ClInclude Include="boost\beast\http\detail\basic_parser.hpp" />
+    <ClInclude Include="boost\beast\http\detail\chunk_encode.hpp" />
+    <ClInclude Include="boost\beast\http\detail\rfc7230.hpp" />
+    <ClInclude Include="boost\beast\http\detail\type_traits.hpp" />
+    <ClInclude Include="boost\beast\http\dynamic_body.hpp" />
+    <ClInclude Include="boost\beast\http\empty_body.hpp" />
+    <ClInclude Include="boost\beast\http\error.hpp" />
+    <ClInclude Include="boost\beast\http\field.hpp" />
+    <ClInclude Include="boost\beast\http\fields.hpp" />
+    <ClInclude Include="boost\beast\http\file_body.hpp" />
+    <None Include="boost\beast\http\impl\basic_parser.ipp" />
+    <None Include="boost\beast\http\impl\chunk_encode.ipp" />
+    <None Include="boost\beast\http\impl\error.ipp" />
+    <None Include="boost\beast\http\impl\field.ipp" />
+    <None Include="boost\beast\http\impl\fields.ipp" />
+    <None Include="boost\beast\http\impl\file_body_win32.ipp" />
+    <None Include="boost\beast\http\impl\message.ipp" />
+    <None Include="boost\beast\http\impl\parser.ipp" />
+    <None Include="boost\beast\http\impl\read.ipp" />
+    <None Include="boost\beast\http\impl\rfc7230.ipp" />
+    <None Include="boost\beast\http\impl\serializer.ipp" />
+    <None Include="boost\beast\http\impl\status.ipp" />
+    <None Include="boost\beast\http\impl\verb.ipp" />
+    <None Include="boost\beast\http\impl\write.ipp" />
+    <ClInclude Include="boost\beast\http\message.hpp" />
+    <ClInclude Include="boost\beast\http\parser.hpp" />
+    <ClInclude Include="boost\beast\http\read.hpp" />
+    <ClInclude Include="boost\beast\http\rfc7230.hpp" />
+    <ClInclude Include="boost\beast\http\serializer.hpp" />
+    <ClInclude Include="boost\beast\http\span_body.hpp" />
+    <ClInclude Include="boost\beast\http\status.hpp" />
+    <ClInclude Include="boost\beast\http\string_body.hpp" />
+    <ClInclude Include="boost\beast\http\type_traits.hpp" />
+    <ClInclude Include="boost\beast\http\vector_body.hpp" />
+    <ClInclude Include="boost\beast\http\verb.hpp" />
+    <ClInclude Include="boost\beast\http\write.hpp" />
+    <ClInclude Include="boost\beast\version.hpp" />
+    <ClInclude Include="boost\beast\websocket.hpp" />
+    <ClInclude Include="boost\beast\websocket\detail\error.hpp" />
+    <ClInclude Include="boost\beast\websocket\detail\frame.hpp" />
+    <ClInclude Include="boost\beast\websocket\detail\hybi13.hpp" />
+    <ClInclude Include="boost\beast\websocket\detail\mask.hpp" />
+    <ClInclude Include="boost\beast\websocket\detail\pausation.hpp" />
+    <ClInclude Include="boost\beast\websocket\detail\pmd_extension.hpp" />
+    <ClInclude Include="boost\beast\websocket\detail\stream_base.hpp" />
+    <ClInclude Include="boost\beast\websocket\detail\type_traits.hpp" />
+    <ClInclude Include="boost\beast\websocket\detail\utf8_checker.hpp" />
+    <ClInclude Include="boost\beast\websocket\error.hpp" />
+    <None Include="boost\beast\websocket\impl\accept.ipp" />
+    <None Include="boost\beast\websocket\impl\close.ipp" />
+    <None Include="boost\beast\websocket\impl\error.ipp" />
+    <None Include="boost\beast\websocket\impl\handshake.ipp" />
+    <None Include="boost\beast\websocket\impl\ping.ipp" />
+    <None Include="boost\beast\websocket\impl\read.ipp" />
+    <None Include="boost\beast\websocket\impl\rfc6455.ipp" />
+    <None Include="boost\beast\websocket\impl\ssl.ipp" />
+    <None Include="boost\beast\websocket\impl\stream.ipp" />
+    <None Include="boost\beast\websocket\impl\teardown.ipp" />
+    <None Include="boost\beast\websocket\impl\write.ipp" />
+    <ClInclude Include="boost\beast\websocket\option.hpp" />
+    <ClInclude Include="boost\beast\websocket\rfc6455.hpp" />
+    <ClInclude Include="boost\beast\websocket\role.hpp" />
+    <ClInclude Include="boost\beast\websocket\ssl.hpp" />
+    <ClInclude Include="boost\beast\websocket\stream.hpp" />
+    <ClInclude Include="boost\beast\websocket\stream_fwd.hpp" />
+    <ClInclude Include="boost\beast\websocket\teardown.hpp" />
+    <ClInclude Include="boost\beast\zlib.hpp" />
+    <ClInclude Include="boost\beast\zlib\deflate_stream.hpp" />
+    <ClInclude Include="boost\beast\zlib\detail\bitstream.hpp" />
+    <ClInclude Include="boost\beast\zlib\detail\deflate_stream.hpp" />
+    <ClInclude Include="boost\beast\zlib\detail\inflate_stream.hpp" />
+    <ClInclude Include="boost\beast\zlib\detail\ranges.hpp" />
+    <ClInclude Include="boost\beast\zlib\detail\window.hpp" />
+    <ClInclude Include="boost\beast\zlib\error.hpp" />
+    <None Include="boost\beast\zlib\impl\error.ipp" />
+    <ClInclude Include="boost\beast\zlib\inflate_stream.hpp" />
+    <ClInclude Include="boost\beast\zlib\zlib.hpp" />
+    <None Include="C:\Users\annepieter\boost\libs\beast\example\websocket\server\sync\Jamfile" />
+    <ClCompile Include="main.cpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
